@@ -230,6 +230,10 @@ section .text-container .text-box h3 {
     justify-content: center;
 }
 
+.bm-burger-bars {
+    background: #ff7a00;
+}
+
 .underline {
     position: relative;
     text-decoration: none;
@@ -257,4 +261,9 @@ section .text-container .text-box h3 {
 
 .quicksand {
     font-family: 'Quicksand', sans-serif;
+}
+
+//TODO: img height should not be declared here
+img {
+    height: 400px;
 }

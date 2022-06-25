@@ -28,7 +28,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
             </Head>
             <header>
                 <Menu>
-                    <div className="w-3/5 place-content-center mx-auto">
+                    <div className="w-1/2 place-content-center mx-auto">
                         <div className="flex justify-between gap-16 text-xl">
                             <div className="flex flex-col gap-16">
                                 <NavbarListItem text="Home" />

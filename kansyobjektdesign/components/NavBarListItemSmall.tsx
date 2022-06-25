@@ -10,7 +10,7 @@ type NavbarListItemSmallProps = {
 const NavbarListItemSmall = ({ text }: NavbarListItemSmallProps) => (
     <div className="text-3xl text-charcoal-100">
         <text className="underline">
-            <Link href={`/${text === 'Home' ? '' : text.toLowerCase()}`}>
+            <Link href={`/work/${text === 'Home' ? '' : text.toLowerCase()}`}>
                 {text}
             </Link>
         </text>
