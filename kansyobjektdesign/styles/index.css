@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Asap', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 body {
     background: #2a2a2a;
@@ -204,7 +206,7 @@ section .text-container .text-box h3 {
 
 /* General sidebar styles */
 .bm-menu {
-    background: #373a47;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW3CVZqYNV2poiJPit54DBQOhVxS2WYUkP26ya2D8ZvXp_cT6vPxUqCd9pfqS9GGU1mKI&usqp=CAU);
     padding: 2.5em 1.5em 0;
 }
 
@@ -218,6 +220,41 @@ section .text-container .text-box h3 {
     background: rgba(0, 0, 0, 0.3);
 }
 
-.bm-item {
-    //  display: flex !important;
+/* .bm-item {
+    // display: flex !important;
+} */
+
+.bm-item-list {
+    display: flex !important;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.underline {
+    position: relative;
+    text-decoration: none;
+}
+
+.underline::before {
+    content: '';
+    position: absolute;
+    color: blue;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff7a00;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .underline:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}
+
+.quicksand {
+    font-family: 'Quicksand', sans-serif;
 }
