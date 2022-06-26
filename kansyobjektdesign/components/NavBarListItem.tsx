@@ -8,8 +8,6 @@ type NavbarListItemProps = {
 }
 
 const NavbarListItem = ({ text }: NavbarListItemProps) => {
-    console.log(text.toLowerCase())
-
     const textToLowerCase = text.toLowerCase()
 
     return (

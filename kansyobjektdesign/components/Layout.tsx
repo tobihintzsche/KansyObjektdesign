@@ -11,7 +11,7 @@ type Props = {
     title?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => {
+const Layout = ({ children, title = 'Kansy Objekt Design' }: Props) => {
     function showSettings(event) {
         event.preventDefault()
     }
@@ -27,6 +27,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
                 />
             </Head>
             <header>
+                {/* TODO: Close Element on each click */}
                 <Menu>
                     <div className="w-1/2 place-content-center mx-auto">
                         <div className="flex justify-between gap-16 text-xl">

@@ -71,10 +71,10 @@ const IndexPage = () => {
     })
 
     return (
-        <Layout title="Home | Next.js + TypeScript Example">
+        <Layout title="Kansy Objekt Design">
             <LandingSectionHome />
             <section>
-                <div className="w-3/4 m-auto">
+                <div className="w-3/5 m-auto">
                     <div className="flex m-auto justify-between pt-16 pb-16">
                         <div className="w-max">
                             <h2 className="text-center">Objekte</h2>

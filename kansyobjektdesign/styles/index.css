@@ -187,11 +187,13 @@ section .text-container .text-box h3 {
 .bm-cross-button {
     height: 24px;
     width: 24px;
+    margin-right: 5px;
 }
 
 /* Color/shape of close button cross */
 .bm-cross {
-    background: #bdc3c7;
+    background: #ff7a00;
+    height: 30px !important;
 }
 
 /*

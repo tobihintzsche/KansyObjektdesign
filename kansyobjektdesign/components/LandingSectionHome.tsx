@@ -5,7 +5,7 @@ import { User } from '../interfaces'
 const LandingPage = () => (
     <section className="relative flex justify-center items-center">
         <img
-            className="h-screen w-screen grayscale brightness-35"
+            className="h-screen object-cover w-screen grayscale brightness-35"
             src="https://picsum.photos/id/1018/1000/600/"
         />
 
