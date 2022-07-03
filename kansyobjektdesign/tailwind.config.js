@@ -12,6 +12,11 @@ module.exports = {
         colors: {
             'primary-orange': '#FF7A00',
         },
+        fontFamily: {
+            orbitron: ['Inter', 'sans-serif'],
+            athiti: ['Inter', 'sans-serif'],
+            poppins: ['Inter', 'sans-serif'],
+        },
     },
     plugins: [],
 }

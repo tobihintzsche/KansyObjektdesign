@@ -14,7 +14,7 @@ const LandingPage = ({ backgroundImage, text }: LandingPageProps) => (
             src={backgroundImage}
         />
 
-        <div className="absolute object-center text-primary-orange landingSectionText">
+        <div className="absolute object-center text-primary-orange orbitron landingSectionText">
             {text}
         </div>
         <div>

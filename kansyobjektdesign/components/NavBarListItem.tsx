@@ -11,12 +11,10 @@ const NavbarListItem = ({ text }: NavbarListItemProps) => {
     const textToLowerCase = text.toLowerCase()
 
     return (
-        <div className="text-6xl text-charcoal-100">
-            <text className="underline font-alt-60">
-                <Link href={`/${text === 'Home' ? '' : textToLowerCase}`}>
-                    {text}
-                </Link>
-            </text>
+        <div className="text-charcoal-100">
+            <Link href={`/${text === 'Home' ? '' : textToLowerCase}`}>
+                <a className="poppins text-3xl md:text-6xl underline">{text}</a>
+            </Link>
         </div>
     )
 }

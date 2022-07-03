@@ -53,63 +53,62 @@ function reveal() {
     }
 }
 
-const IndexPage = () => {
+const IndexPage = (breakpoint: number) => {
     useEffect(() => {
         window.addEventListener('scroll', reveal)
     }, [])
 
     useUpdateControllerOnRouteChange()
 
-    const bringInParallaxLeft = useParallax<HTMLImageElement>({
-        easing: 'easeOutQuad',
-        translateX: [15, 50],
-    })
+    console.log({ breakpoint })
 
-    const bringInParallaxRight = useParallax<HTMLImageElement>({
-        easing: 'easeOutQuad',
-        translateX: [-15, -50],
-    })
+    // const bringInParallaxLeft = useParallax<HTMLImageElement>({
+    //     easing: 'easeOutQuad',
+    //     translateX: [15, 50],
+    // })
+
+    // const bringInParallaxRight = useParallax<HTMLImageElement>({
+    //     easing: 'easeOutQuad',
+    //     translateX: [-15, -50],
+    // })
 
     return (
         <Layout title="Kansy Objekt Design">
             <LandingSectionHome />
             <section>
-                <div className="w-3/5 m-auto">
-                    <div className="flex m-auto justify-between pt-16 pb-16">
-                        <div className="w-max">
-                            <h2 className="text-center">Objekte</h2>
+                <div className="w-5/6 md:w-4/5 m-auto">
+                    <div className="flex m-auto flex-col md:flex-row pt-16 pb-16">
+                        <div className="text-center">
+                            <text className="text-xl md:text-2xl">Objekte</text>
                             <div className="animatedNumbers"></div>
                         </div>
-                        <div className="w-max">
-                            <h2 className="text-center">Mitarbeiter</h2>
+                        <div className="text-center">
+                            <text className="text-xl md:text-2xl">
+                                Mitarbeiter
+                            </text>
                             <div className="animatedNumbers"></div>
                         </div>
-                        <div className="w-max">
-                            <h2 className="text-center">Länder</h2>
+                        <div className="text-center">
+                            <text className="text-xl md:text-2xl">Länder</text>
                             <div className="animatedNumbers"></div>
                         </div>
                     </div>
-                    <div className="flex justify-between m-auto">
-                        <div className="text-primary-orange text-2xl">
-                            <div>
-                                Konzepte <br />
-                                Planen <br />
-                                Ideen <br />
-                                Gestalten
-                            </div>
+                    <div className="flex flex-col md:flex-row justify-between m-auto">
+                        <div className="text-primary-orange poppins text-2xl">
+                            Konzepte <br />
+                            Planen <br />
+                            Ideen <br />
+                            Gestalten
                         </div>
-                        <div className="w-2/3 leading-10 text-2xl">
-                            <div>
-                                Unser Unternehmen befasst sich seit 1989 mit der
-                                Planung, Entwicklung und Fertigung von
-                                individuell gestalteten Einrichtungen, speziell
-                                auch im Hotelbereich. Wir bieten unseren Kunden
-                                mehr, als verstaubte katalogisierte
-                                Einrichtungen, bei denen individuelle Wünsche
-                                auf der Strecke bleiben. Jede Einrichtung wird
-                                speziell nach IHREN Wünschen entworfen und
-                                geplant.
-                            </div>
+                        <div className="w-2/3 leading-10 poppins text-xl">
+                            Unser Unternehmen befasst sich seit 1989 mit der
+                            Planung, Entwicklung und Fertigung von individuell
+                            gestalteten Einrichtungen, speziell auch im
+                            Hotelbereich. Wir bieten unseren Kunden mehr, als
+                            verstaubte katalogisierte Einrichtungen, bei denen
+                            individuelle Wünsche auf der Strecke bleiben. Jede
+                            Einrichtung wird speziell nach IHREN Wünschen
+                            entworfen und geplant.
                         </div>
                     </div>
                     <div className="pt-32">
@@ -117,7 +116,7 @@ const IndexPage = () => {
                             width={500}
                             src="https://media.architecturaldigest.com/photos/5f9876a5d30e09d9d0bbffef/master/w_1600,c_limit/Andre%20Mellone%20pick%20LA730.jpeg"
                             alt="Image"
-                            ref={bringInParallaxLeft.ref}
+                            // ref={bringInParallaxLeft.ref}
                         />
                     </div>
                     <div className="flex justify-end pt-16">
@@ -125,24 +124,24 @@ const IndexPage = () => {
                             width={500}
                             src="https://media.architecturaldigest.com/photos/5f9876a5d30e09d9d0bbffef/master/w_1600,c_limit/Andre%20Mellone%20pick%20LA730.jpeg"
                             alt="Image"
-                            ref={bringInParallaxRight.ref}
+                            // ref={bringInParallaxRight.ref}
                         />
                     </div>
                     <div className="leading-10 text-2xl text-center mt-64">
-                        <h2>
+                        <text>
                             Unser Leistungsspektrum reicht vom 200 Zimmer-Hotel
                             bis zur individuellen Kücheneinrichtung bei Ihnen zu
                             Hause.
-                        </h2>
+                        </text>
                     </div>
-                    <div className="flex justify-between m-auto mt-64">
+                    <div className="flex flex-col md:flex-row justify-between m-auto mt-64">
                         <img
                             src="https://pbs.twimg.com/media/E6PDP83WUAAP_Tx?format=jpg&name=4096x4096"
                             alt=""
                             width={500}
                         />
                         <div className="w-2/3 leading-10 text-2xl">
-                            <h2 className="text-right text-primary-orange">
+                            <text className="text-right text-primary-orange">
                                 Entwurfskonzeption <br /> 3D-Visualisierung{' '}
                                 <br /> Technische Umsetzung <br />
                                 Fertigung an Bearbeitungszentren
@@ -151,7 +150,7 @@ const IndexPage = () => {
                                 <br /> Innenausbau <br />
                                 Lieferung und Montage bundesweit <br />{' '}
                                 GU-Leistungen
-                            </h2>
+                            </text>
                         </div>
                     </div>
                     <div
@@ -167,36 +166,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-{
-    /* <div className=ameName="w-full flex flex-col h-screen content-center justify-center">
-      <Carousel
-        infiniteLoop={true}
-        autoPlay={false}
-        transitionTime={1000}
-        interval={5000}
-        showIndicators={false}
-        showStatus={false}
-        showThumbs={false}
-      >
-            <div>
-                <img src="https://picsum.photos/id/1018/1000/600/" />
-            </div>
-            <div>
-                <img src="https://picsum.photos/id/1015/1000/600/" />
-            </div>
-            <div>
-                <img src="https://picsum.photos/id/1019/1000/600/" />
-            </div>
-        </Carousel>  
-       
-        {/* <Parallax translateX={['-100px', '200px']}> 
-        <div className=ameName='w-1/2'>
-          <img src="https://picsum.photos/id/1018/1000/600/" />
-        </div>
-
-        </Parallax>
-      
-        
-    </div> */
-}

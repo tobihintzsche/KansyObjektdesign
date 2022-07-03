@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Athiti');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Athiti;
 }
 body {
     background: #2a2a2a;
@@ -228,8 +229,6 @@ section .text-container .text-box h3 {
 
 .bm-item-list {
     display: flex !important;
-    flex-flow: column;
-    justify-content: center;
 }
 
 .bm-burger-bars {
@@ -261,8 +260,16 @@ section .text-container .text-box h3 {
     }
 }
 
-.quicksand {
-    font-family: 'Quicksand', sans-serif;
+.orbitron {
+    font-family: 'Orbitron';
+}
+
+.athiti {
+    font-family: 'Athiti', sans-serif;
+}
+
+.poppins {
+    font-family: 'Poppins';
 }
 
 //TODO: img height should not be declared here

@@ -25,13 +25,25 @@ const Layout = ({ children, title = 'Kansy Objekt Design' }: Props) => {
                     name="viewport"
                     content="initial-scale=1.0, width=device-width"
                 />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+                    rel="stylesheet"
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Athiti:wght@200&display=swap"
+                    rel="stylesheet"
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,300&display=swap"
+                    rel="stylesheet"
+                />
             </Head>
             <header>
                 {/* TODO: Close Element on each click */}
                 <Menu>
-                    <div className="w-1/2 place-content-center mx-auto">
-                        <div className="flex justify-between gap-16 text-xl">
-                            <div className="flex flex-col gap-16">
+                    <div className="md:m-auto">
+                        <div className="flex flex-col gap-4 md:flex-row md:justify-between md:gap-16 md:text-xl">
+                            <div className="flex flex-col gap-4 md:gap-16">
                                 <NavbarListItem text="Home" />
                                 <NavbarListItem text="AboutUs" />
                                 <NavbarListItem text="Referenzen" />
@@ -39,10 +51,10 @@ const Layout = ({ children, title = 'Kansy Objekt Design' }: Props) => {
                                 <NavbarListItem text="Kontakt" />
                             </div>
                             <div>
-                                <div className="text-3xl quicksand text-primary-orange">
+                                <div className="text-2xl orbitron text-primary-orange">
                                     WORK
                                 </div>
-                                <div className="flex flex-col gap-4 mt-4">
+                                <div className="flex flex-col gap-2 mt-4">
                                     <NavbarListItemSmall text="Hotel" />
                                     <NavbarListItemSmall text="Bar" />
                                     <NavbarListItemSmall text="Lounge" />
