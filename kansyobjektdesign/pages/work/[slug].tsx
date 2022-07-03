@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { GraphQLClient, gql } from 'graphql-request'
-import Layout from '../../components/Layout'
 import LandingPage from '../../components/LandingSection'
+import Layout from '../../components/Layout'
 
 interface IReference {
     id: string
@@ -70,7 +70,7 @@ export default function Reference({ reference }: { reference: IReference }) {
                 />
 
                 <section>
-                    <div className="grid grid-cols-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2">
                         {reference.images.map((image: IImages) => {
                             return (
                                 <div className="container">
