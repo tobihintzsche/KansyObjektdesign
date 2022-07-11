@@ -12,6 +12,7 @@ import Bar from '../utils/Bar_Bild.jpg'
 
 import Logo from '../utils/kansylogo.png'
 import LandingSectionHome from '../components/LandingSectionHome'
+import { useInView } from 'react-intersection-observer'
 
 function useUpdateControllerOnRouteChange() {
     const location = useRouter()
@@ -62,45 +63,34 @@ const IndexPage = (breakpoint: number) => {
 
     console.log({ breakpoint })
 
-    // const bringInParallaxLeft = useParallax<HTMLImageElement>({
-    //     easing: 'easeOutQuad',
-    //     translateX: [15, 50],
-    // })
+    const { ref, inView } = useInView({
+        /* Optional options */
+        threshold: 0.4,
+    })
 
-    // const bringInParallaxRight = useParallax<HTMLImageElement>({
-    //     easing: 'easeOutQuad',
-    //     translateX: [-15, -50],
-    // })
+    const { ref: secondRef, inView: secondInView } = useInView({
+        /* Optional options */
+        threshold: 0.4,
+    })
+
+    const { ref: numbersViewRef, inView: numbersInView } = useInView({
+        /* Optional options */
+        threshold: 0.4,
+    })
 
     return (
         <Layout title="Kansy Objekt Design">
             <LandingSectionHome />
             <section>
-                <div className="w-5/6 md:w-4/5 m-auto">
-                    <div className="flex m-auto flex-col md:flex-row pt-16 pb-16">
-                        <div className="text-center">
-                            <text className="text-xl md:text-2xl">Objekte</text>
-                            <div className="animatedNumbers"></div>
-                        </div>
-                        <div className="text-center">
-                            <text className="text-xl md:text-2xl">
-                                Mitarbeiter
-                            </text>
-                            <div className="animatedNumbers"></div>
-                        </div>
-                        <div className="text-center">
-                            <text className="text-xl md:text-2xl">Länder</text>
-                            <div className="animatedNumbers"></div>
-                        </div>
-                    </div>
-                    <div className="flex flex-col md:flex-row justify-between m-auto">
+                <div className="w-5/6 sm:w-3/4 md:w-3/5 m-auto">
+                    <div className="flex flex-col md:gap-8 md:flex-row justify-between m-auto mt-32">
                         <div className="text-primary-orange poppins text-2xl">
                             Konzepte <br />
                             Planen <br />
                             Ideen <br />
                             Gestalten
                         </div>
-                        <div className="w-2/3 leading-10 poppins text-xl">
+                        <div className="leading-10 poppins text-xl">
                             Unser Unternehmen befasst sich seit 1989 mit der
                             Planung, Entwicklung und Fertigung von individuell
                             gestalteten Einrichtungen, speziell auch im
@@ -111,53 +101,48 @@ const IndexPage = (breakpoint: number) => {
                             entworfen und geplant.
                         </div>
                     </div>
-                    <div className="pt-32">
-                        <img
-                            width={500}
-                            src="https://media.architecturaldigest.com/photos/5f9876a5d30e09d9d0bbffef/master/w_1600,c_limit/Andre%20Mellone%20pick%20LA730.jpeg"
-                            alt="Image"
-                            // ref={bringInParallaxLeft.ref}
-                        />
-                    </div>
-                    <div className="flex justify-end pt-16">
-                        <img
-                            width={500}
-                            src="https://media.architecturaldigest.com/photos/5f9876a5d30e09d9d0bbffef/master/w_1600,c_limit/Andre%20Mellone%20pick%20LA730.jpeg"
-                            alt="Image"
-                            // ref={bringInParallaxRight.ref}
-                        />
-                    </div>
-                    <div className="leading-10 text-2xl text-center mt-64">
-                        <text>
-                            Unser Leistungsspektrum reicht vom 200 Zimmer-Hotel
-                            bis zur individuellen Kücheneinrichtung bei Ihnen zu
-                            Hause.
-                        </text>
-                    </div>
-                    <div className="flex flex-col md:flex-row justify-between m-auto mt-64">
-                        <img
-                            src="https://pbs.twimg.com/media/E6PDP83WUAAP_Tx?format=jpg&name=4096x4096"
-                            alt=""
-                            width={500}
-                        />
-                        <div className="w-2/3 leading-10 text-2xl">
-                            <text className="text-right text-primary-orange">
-                                Entwurfskonzeption <br /> 3D-Visualisierung{' '}
-                                <br /> Technische Umsetzung <br />
-                                Fertigung an Bearbeitungszentren
-                                <br />
-                                CAD/CAM-Technik
-                                <br /> Innenausbau <br />
-                                Lieferung und Montage bundesweit <br />{' '}
-                                GU-Leistungen
-                            </text>
+                    <div
+                        ref={ref}
+                        className={`${inView ? 'appear-inView' : 'appearLeft'}`}
+                    >
+                        <div className="pt-32 flex flex-col gap-4 md:flex-row">
+                            <img
+                                width={500}
+                                src="https://media.architecturaldigest.com/photos/5f9876a5d30e09d9d0bbffef/master/w_1600,c_limit/Andre%20Mellone%20pick%20LA730.jpeg"
+                                alt="Image"
+                            />
+                            <div className="leading-10 text-2xl poppins">
+                                Unser Leistungsspektrum reicht vom 200
+                                Zimmer-Hotel bis zur individuellen
+                                Kücheneinrichtung bei Ihnen zu Hause.
+                            </div>
                         </div>
                     </div>
                     <div
-                        className="text-center flex flex-col justify-end"
-                        style={{ height: '1000px' }}
+                        ref={secondRef}
+                        className={`${
+                            secondInView ? 'appear-inView' : 'appearRight'
+                        }`}
                     >
-                        <h1>Footer</h1>
+                        <div className="flex justify-end flex-col-reverse gap-4 md:flex-row mt-32">
+                            <div className="text-right leading-10 text-2xl">
+                                <text className="poppins text-primary-orange">
+                                    Entwurfskonzeption <br /> 3D-Visualisierung{' '}
+                                    <br /> Technische Umsetzung <br />
+                                    Fertigung an Bearbeitungszentren
+                                    <br />
+                                    CAD/CAM-Technik
+                                    <br /> Innenausbau <br />
+                                    Lieferung und Montage bundesweit <br />
+                                    GU-Leistungen
+                                </text>
+                            </div>
+                            <img
+                                width={500}
+                                src="https://media.architecturaldigest.com/photos/5f9876a5d30e09d9d0bbffef/master/w_1600,c_limit/Andre%20Mellone%20pick%20LA730.jpeg"
+                                alt="Image"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>

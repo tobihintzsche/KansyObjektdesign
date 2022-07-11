@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import LandingPage from '../components/LandingSection'
 import Layout from '../components/Layout'
-import { sampleData } from '../utils/sample-data'
+import { sampleUserData } from '../utils/sample-data'
 
 const IndexPage = () => (
     <Layout>
@@ -12,7 +12,7 @@ const IndexPage = () => (
 
         <section>
             <div className="w-3/5 m-auto text-start">
-                {sampleData.map((elemet) => {
+                {sampleUserData.map((elemet) => {
                     return (
                         <text
                             className={`mr-3 text-3xl ${

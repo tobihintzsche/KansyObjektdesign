@@ -70,7 +70,7 @@ export default function Reference({ reference }: { reference: IReference }) {
                 />
 
                 <section>
-                    <div className="grid grid-cols-1 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         {reference.images.map((image: IImages) => {
                             return (
                                 <div className="container">

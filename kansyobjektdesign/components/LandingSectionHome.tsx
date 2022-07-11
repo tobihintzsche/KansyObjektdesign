@@ -1,6 +1,5 @@
 import * as React from 'react'
-import ListItem from './ListItem'
-import { User } from '../interfaces'
+import Navbar from './navbar'
 
 const LandingPage = () => (
     <section className="relative flex justify-center items-center">

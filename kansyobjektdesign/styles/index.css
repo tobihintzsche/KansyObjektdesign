@@ -13,7 +13,7 @@
     font-family: Athiti;
 }
 body {
-    background: #2a2a2a;
+    background: black;
     color: white;
 }
 section {
@@ -113,19 +113,6 @@ section .text-container .text-box h3 {
     inherits: false;
 }
 
-.animatedNumbers {
-    transition: --num 5s;
-    counter-set: num var(--num);
-    font: 800 40px system-ui;
-    text-align: center;
-}
-.animatedNumbers::after {
-    content: counter(num);
-}
-.animatedNumbers:hover {
-    --num: 100;
-}
-
 .landingSectionText {
     font-size: 70px;
     font-weight: bold;
@@ -193,7 +180,7 @@ section .text-container .text-box h3 {
 
 /* Color/shape of close button cross */
 .bm-cross {
-    background: #ff7a00;
+    background: #8fbc8f;
     height: 30px !important;
 }
 
@@ -232,7 +219,7 @@ section .text-container .text-box h3 {
 }
 
 .bm-burger-bars {
-    background: #ff7a00;
+    background: #8fbc8f;
 }
 
 .underline {
@@ -248,7 +235,7 @@ section .text-container .text-box h3 {
     right: 0;
     width: 0;
     height: 2px;
-    background-color: #ff7a00;
+    background-color: #8fbc8f;
     transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -275,4 +262,38 @@ section .text-container .text-box h3 {
 //TODO: img height should not be declared here
 img {
     height: 400px;
+}
+
+.columns {
+    display: flex;
+}
+
+.col + col {
+    margin-left: 1.5rem;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+}
+
+.appearRight {
+    transition: all 0.8s;
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.appearLeft {
+    transition: all 0.8s;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.appear-inView {
+    opacity: 1;
+    transform: none;
+    transition: 0.5s;
 }

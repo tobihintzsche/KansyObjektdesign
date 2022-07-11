@@ -1,6 +1,5 @@
 import * as React from 'react'
-import ListItem from './ListItem'
-import { User } from '../interfaces'
+import Navbar from './navbar'
 
 type LandingPageProps = {
     backgroundImage: string
@@ -14,9 +13,10 @@ const LandingPage = ({ backgroundImage, text }: LandingPageProps) => (
             src={backgroundImage}
         />
 
-        <div className="absolute object-center text-primary-orange orbitron landingSectionText">
+        <text className="absolute object-center text-primary-orange text-5xl md:text-7xl orbitron">
             {text}
-        </div>
+        </text>
+
         <div>
             <span
                 className="arrow pulse"

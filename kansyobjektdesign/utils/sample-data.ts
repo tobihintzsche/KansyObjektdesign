@@ -1,7 +1,7 @@
 import { User } from '../interfaces'
 
 /** Dummy user data. */
-export const sampleData = [
+export const sampleUserData = [
     { name: '3i Frankfurt', highlighted: false },
     { name: 'bar54', highlighted: false },
     { name: 'bristol', highlighted: false },

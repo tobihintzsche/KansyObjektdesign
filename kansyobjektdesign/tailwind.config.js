@@ -10,7 +10,7 @@ module.exports = {
             175: '1.75',
         },
         colors: {
-            'primary-orange': '#FF7A00',
+            'primary-orange': '#8fbc8f',
         },
         fontFamily: {
             orbitron: ['Inter', 'sans-serif'],

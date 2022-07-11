@@ -5,6 +5,7 @@ import Navbar from './navbar'
 import { slide as Menu } from 'react-burger-menu'
 import NavbarListItem from './NavBarListItem'
 import NavbarListItemSmall from './NavBarListItemSmall'
+import Footer from './footer'
 
 type Props = {
     children?: ReactNode
@@ -17,7 +18,7 @@ const Layout = ({ children, title = 'Kansy Objekt Design' }: Props) => {
     }
 
     return (
-        <div style={{ backgroundColor: '2A2A2A' }}>
+        <div style={{ backgroundColor: '34093b' }}>
             <Head>
                 <title>{title}</title>
                 <meta charSet="utf-8" />
@@ -70,10 +71,9 @@ const Layout = ({ children, title = 'Kansy Objekt Design' }: Props) => {
                 </Menu>
             </header>
             {children}
-            {/* <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer> */}
+            <footer>
+                <Footer />
+            </footer>
         </div>
     )
 }
